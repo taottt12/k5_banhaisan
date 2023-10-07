@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".View.GioHangActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+            <Button
+                android:id="@+id/btnExit"
+                android:layout_margin="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="x"></Button>
+            <TextView
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:hint="Giỏ Hàng"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/purple_200"></TextView>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_trong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Bạn Chưa Có Đơn Hàng Nào"
+            android:textSize="20dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_thongtin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="70dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="550dp"
+                android:orientation="vertical">
+                <ListView
+                    android:id="@+id/lv_sp_giohang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_thanhtoan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Tổng:"
+                    android:textColor="#D80C0C"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/tv_tongtien"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="0 Đồng"
+                    android:textColor="#D80C0C"
+                    android:textSize="30dp" />
+
+            </LinearLayout>
+                <Button
+                    android:id="@+id/btn_thanhtoan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thanh toán"
+                    android:layout_gravity="center"></Button>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">k5_banhang</string>
+    <string name="title_activity_login">login</string>
+    <string name="itemp">Số lượng</string>
+</resources>

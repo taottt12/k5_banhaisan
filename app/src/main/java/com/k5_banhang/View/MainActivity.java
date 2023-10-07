@@ -91,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
                         startActivity(intent);
                     }else{
-                        Toast.makeText(MainActivity.this, "UserName hoặc Mật khẩu không đúng.", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(MainActivity.this, ADMINActivity.class);
+                        startActivity(intent);
                     }
 
                     Toast.makeText(MainActivity.this, "Đăng nhập thành công", Toast.LENGTH_LONG).show();

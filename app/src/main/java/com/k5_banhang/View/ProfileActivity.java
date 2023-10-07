@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ public class ProfileActivity extends AppCompatActivity {
     TextView name, sdt, email;
     Button btn_DN, btn_CSHS, btn_DX,btnExit;
     LinearLayout ll_enable, ll_disable;
+    ImageView imgv_profile;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
@@ -45,6 +47,13 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        imgv_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileActivity.this, ADMINActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private  void anhxa(){
@@ -57,6 +66,7 @@ public class ProfileActivity extends AppCompatActivity {
         ll_enable = findViewById(R.id.ll_enable);
         ll_disable = findViewById(R.id.ll_disable);
         btnExit = findViewById(R.id.btnExit);
+        imgv_profile = findViewById(R.id.imgv_profile);
     }
     private void initView(){
         int idUser = MainActivity.idUser;
@@ -64,6 +74,9 @@ public class ProfileActivity extends AppCompatActivity {
         if(idUser != 0){
             ll_disable.setVisibility(View.VISIBLE);
             ll_enable.setVisibility(View.GONE);
+            if(ADMINActivity.caidat == 1){
+                imgv_profile.setVisibility(View.VISIBLE);
+            }
         }else{
             ll_enable.setVisibility(View.VISIBLE);
             ll_disable.setVisibility(View.GONE);

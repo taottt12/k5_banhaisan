@@ -5,11 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.ProfileActivity">
-    <Button
-        android:id="@+id/btnExit"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="x"></Button>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="x"></Button>
+
+        <ImageView
+            android:id="@+id/imgv_profile"
+            android:visibility="gone"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/cd"></ImageView>
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/ll_enable"
         android:layout_width="match_parent"

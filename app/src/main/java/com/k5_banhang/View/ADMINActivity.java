@@ -27,6 +27,13 @@ public class ADMINActivity extends Activity {
                 startActivity(intent);
             }
         });
+        btn_QLSanPham.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ADMINActivity.this, QuanLySPActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void anhxa(){

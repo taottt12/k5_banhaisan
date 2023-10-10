@@ -44,7 +44,17 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light"/>
 
+        <activity android:name="com.k5_banhang.View.SuaSPActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light"/>
+
         <activity android:name="com.k5_banhang.View.ADMINActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light"/>
+
+        <activity android:name="com.k5_banhang.View.QuanLySPActivity"
             android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light"/>

@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#ECD0C7"
-    tools:context=".View.SuaSPActivity">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:text="Sửa sản phẩm"
-    android:layout_margin="10dp"
-    android:textStyle="bold"
-    android:textSize="40dp"></TextView>
+    tools:context=".View.ThemSPActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="THÊM SẢN PHẨM"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textSize="40dp"></TextView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,9 +23,10 @@
             android:textSize="20dp"
             android:text="Tên sản phẩm:"></TextView>
         <EditText
-            android:id="@+id/tv_tenSP"
+            android:id="@+id/ed_tenSPT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             ></EditText>
     </LinearLayout>
     <LinearLayout
@@ -38,7 +39,7 @@
             android:textSize="20dp"
             android:text="Đơn giá:"></TextView>
         <EditText
-            android:id="@+id/tv_giaSP"
+            android:id="@+id/ed_giaSPT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             ></EditText>
@@ -53,7 +54,7 @@
             android:textSize="20dp"
             android:text="Đơn vị tính:"></TextView>
         <EditText
-            android:id="@+id/tv_DVT"
+            android:id="@+id/ed_DVTT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></EditText>
     </LinearLayout>
@@ -67,7 +68,7 @@
             android:textSize="20dp"
             android:text="Loại hàng:"></TextView>
         <Spinner
-            android:id="@+id/sp_lh"
+            android:id="@+id/sp_lhT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></Spinner>
     </LinearLayout>
@@ -81,7 +82,7 @@
             android:textSize="20dp"
             android:text="Nhà cung cấp:"></TextView>
         <Spinner
-            android:id="@+id/sp_ncc"
+            android:id="@+id/sp_nccT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></Spinner>
     </LinearLayout>
@@ -97,18 +98,18 @@
             android:layout_marginLeft="30dp"
             android:orientation="vertical">
             <ImageView
-                android:id="@+id/imgv_upfile"
+                android:id="@+id/img_upfileT"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/folder"></ImageView>
             <ImageView
-                android:id="@+id/imgv_chup"
+                android:id="@+id/img_chupT"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/cam"></ImageView>
         </LinearLayout>
         <ImageView
-            android:id="@+id/imgv_anh"
+            android:id="@+id/img_anhT"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginLeft="50dp"></ImageView>
@@ -116,10 +117,10 @@
 
 
     <Button
-        android:id="@+id/btn_update"
+        android:id="@+id/btn_ADD"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cập nhật sản phẩm"
+        android:text="Thêm sản phẩm"
         android:textStyle="bold"
         android:textColor="#EF6060"
         android:textSize="20dp"></Button>

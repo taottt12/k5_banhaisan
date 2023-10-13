@@ -73,7 +73,6 @@ public class GioHangActivity extends AppCompatActivity {
             tvTrong.setVisibility(View.GONE);
             llThongtin.setVisibility(View.VISIBLE);
             GioHangAdapter adapter = new GioHangAdapter(GioHangActivity.this, HomeActivity.mangGioHang);
-
             adapter.setUpdateTongTienListener(new GioHangAdapter.UpdateTongTienListener() {
                 @Override
                 public void onUpdateTongTien() {

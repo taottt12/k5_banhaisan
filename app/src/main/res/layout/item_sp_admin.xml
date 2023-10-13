@@ -29,12 +29,24 @@
             android:text="500000"
             android:textSize="20dp"
             android:textStyle="bold"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="right">
-
+            <TextView
+                android:id="@+id/txt_soLuong"
+                android:layout_marginTop="5dp"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_toLeftOf="@id/btn_delete"
+                android:gravity="center"
+                android:text="SL"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
             <ImageView
                 android:id="@+id/imgv_update"
                 android:src="@drawable/sua"

@@ -163,7 +163,7 @@ public class DatHangActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<DatHangResponse> call, Throwable t) {
                 Toast.makeText(DatHangActivity.this, "Lỗi đặt hàng", Toast.LENGTH_SHORT).show();
-
+                Log.e("aloo","123");
                 finish();
                 HomeActivity.mangGioHang.clear();
                 Intent intent = new Intent(DatHangActivity.this,HomeActivity.class);

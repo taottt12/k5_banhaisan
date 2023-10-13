@@ -44,12 +44,14 @@ public class SanPhamADMINAdapter extends RecyclerView.Adapter<SanPhamADMINAdapte
     public void onBindViewHolder(@NonNull SanPhamADMINAdapter.ViewHolder holder, int position) {
         SanPham sanPham = sanPhamList.get(position);
 
-        Picasso.get().load(Contans.API_URL +"img/"+ sanPham.getHinhanh()).into(holder.imgSanpham);
-        holder.txtten.setText(sanPham.getTensanpham());
+        Picasso.get().load(Contans.API_URL +"image/"+ sanPham.getHinhanh()).into(holder.imgSanpham);
+
+
+        holder.txtten.setText("Tên: "+sanPham.getTensanpham());
+        holder.txt_soLuong.setText("Còn: "+sanPham.getSoluong());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         holder.txtgia.setText("Giá: " + decimalFormat.format(Double.parseDouble(sanPham.getDongia()))+"VNĐ");
         System.out.println(sanPham.getHinhanh());
-
     }
 
     @Override
@@ -58,13 +60,14 @@ public class SanPhamADMINAdapter extends RecyclerView.Adapter<SanPhamADMINAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView txtgia, txtten;
+        TextView txtgia, txtten, txt_soLuong;
         ImageView imgSanpham,imgv_update,imgv_delete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtgia = itemView.findViewById(R.id.txt_giasp);
             txtten = itemView.findViewById(R.id.txt_tensp);
+            txt_soLuong = itemView.findViewById(R.id.txt_soLuong);
             imgSanpham = itemView.findViewById(R.id.iv_spadmin);
             imgv_update = itemView.findViewById(R.id.imgv_update);
             imgv_delete = itemView.findViewById(R.id.imgv_delete);

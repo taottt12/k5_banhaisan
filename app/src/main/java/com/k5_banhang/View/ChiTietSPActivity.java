@@ -129,7 +129,7 @@ public class ChiTietSPActivity extends AppCompatActivity {
         //gán thông tin
         tvDVT.setText(donvt);
         tvTenSP.setText(tenChiTiet);
-        Picasso.get().load(Contans.API_URL +"img/"+ sanPham.getHinhanh()).into(ivSanpham);
+        Picasso.get().load(Contans.API_URL +"image/"+ sanPham.getHinhanh()).into(ivSanpham);
 
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         tvGiaSP.setText("Giá: " + decimalFormat.format(giachitiet) + "Đ");

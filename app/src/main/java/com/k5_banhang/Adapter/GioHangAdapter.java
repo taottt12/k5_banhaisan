@@ -78,7 +78,7 @@ public class GioHangAdapter extends BaseAdapter {
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         holder.tvGiagiohang.setText(decimalFormat.format(gioHang.getGiasp())+ "Đ");
         String hinh = HomeActivity.mangGioHang.get(i).getHinhsp();
-        Picasso.get().load(Contans.API_URL +"img/"+hinh).into(holder.ivGioHang);
+        Picasso.get().load(Contans.API_URL +"image/"+hinh).into(holder.ivGioHang);
         holder.btnSoluong.setText(gioHang.getSoluong()+"");
         int sl = Integer.parseInt(holder.btnSoluong.getText().toString());
         if(sl >=10){

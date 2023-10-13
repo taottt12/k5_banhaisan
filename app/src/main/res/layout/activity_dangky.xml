@@ -60,7 +60,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:inputType="textPassword"
             android:hint="Nhập tên"
             android:minHeight="48dp"
             android:minWidth="200dp" />
@@ -70,7 +69,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:inputType="textPassword"
             android:hint="Nhập số điện thoại"
             android:minHeight="48dp"
             android:minWidth="200dp" />
@@ -80,7 +78,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:inputType="textPassword"
             android:hint="Nhập email"
             android:minHeight="48dp"
             android:minWidth="200dp" />

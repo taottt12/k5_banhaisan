@@ -54,6 +54,13 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btn_CSHS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileActivity.this, ChinhSuaHoSoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private  void anhxa(){

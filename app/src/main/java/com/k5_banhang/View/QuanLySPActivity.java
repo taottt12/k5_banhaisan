@@ -38,6 +38,14 @@ public class QuanLySPActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quanlysanpham);
         anhxa();
         LoadSanPham();
+
+        imgv_addSP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(QuanLySPActivity.this, ThemSPActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     private void anhxa(){
         rc_loadMathang = findViewById(R.id.rv_MatHangAdmin);

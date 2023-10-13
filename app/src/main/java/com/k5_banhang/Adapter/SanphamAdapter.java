@@ -45,7 +45,7 @@ public class SanphamAdapter extends RecyclerView.Adapter<SanphamAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         SanPham sanPham = sanPhamList.get(position);
 
-        Picasso.get().load(Contans.API_URL +"img/"+ sanPham.getHinhanh()).into(holder.imgSanpham);
+        Picasso.get().load(Contans.API_URL +"image/"+ sanPham.getHinhanh()).into(holder.imgSanpham);
         holder.txtten.setText(sanPham.getTensanpham());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         holder.txtgia.setText("Giá: " + decimalFormat.format(Double.parseDouble(sanPham.getDongia()))+"VNĐ");

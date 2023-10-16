@@ -70,7 +70,7 @@ public class ThemSPActivity extends AppCompatActivity {
     ImageView img_folder, img_camera, img_anhSPT;
     Button btn_addSP;
     Bitmap bitmap;
-
+    private int REQUEST_CODE_CAMERA = 123;
     private List<NhaCungCap> NhaCungCapList;
     private List<LoaiHang> LoaiHangList;
     public static List<String> mangncc;
@@ -88,14 +88,8 @@ public class ThemSPActivity extends AppCompatActivity {
         img_camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Long maNCC = sp_nccT.getSelectedItemId();
-                Long maLH = sp_lhT.getSelectedItemId();
-                String stringValue = String.valueOf(maNCC + 1);
-
-                String tenSP = tv_tenSPT.getText().toString().trim();
-                String donGia = tv_giaSPT.getText().toString().trim();
-                String donViTinh = tv_dvtSPT.getText().toString().trim();
-                tv_dvtSPT.setText(tenSP);
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE_SECURE);
+                startActivityForResult(intent, REQUEST_CODE_CAMERA);
             }
         });
         ActivityResultLauncher<Intent> activityResultLauncher =

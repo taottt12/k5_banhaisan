@@ -12,19 +12,36 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.k5_banhang.Model.InsertSPResponse;
 import com.k5_banhang.R;
+import com.k5_banhang.remote.APIService;
+import com.k5_banhang.remote.Contans;
+import com.k5_banhang.remote.Retrofift;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ProfileActivity extends AppCompatActivity {
     TextView name, sdt, email;
-    Button btn_DN, btn_CSHS, btn_DX,btnExit;
+    Button btn_DN, btn_CSHS, btn_DX,btnExit, btn_DoiMK;
     LinearLayout ll_enable, ll_disable;
     ImageView imgv_profile;
+    private APIService apiService;
+    public static String nameKH, sdtKH, emailKH;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         anhxa();
         initView();
-        getData();
+
+        String idUS = String.valueOf(MainActivity.idUser);
+        if(idUS != null || !idUS.isEmpty()){
+            getData(idUS);
+        }else{
+            Toast.makeText(this, "dell có id", Toast.LENGTH_SHORT).show();
+        }
+
         btn_DN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,6 +78,7 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     private  void anhxa(){
@@ -74,6 +92,8 @@ public class ProfileActivity extends AppCompatActivity {
         ll_disable = findViewById(R.id.ll_disable);
         btnExit = findViewById(R.id.btnExit);
         imgv_profile = findViewById(R.id.imgv_profile);
+        btn_DoiMK = findViewById(R.id.btn_DoiMK);
+        apiService = Retrofift.getClient(Contans.API_URL).create(APIService.class);
     }
     private void initView(){
         int idUser = MainActivity.idUser;
@@ -89,14 +109,31 @@ public class ProfileActivity extends AppCompatActivity {
             ll_disable.setVisibility(View.GONE);
         }
     }
-    private void getData(){
-        String nameValue = MainActivity.nameKH;
-        String sdtValue = MainActivity.sdtKH;
-        String emailValue = MainActivity.emailKH;
+    private void getData(String idUS){
+        apiService.get_account(idUS).enqueue(new Callback<InsertSPResponse>() {
+            @Override
+            public void onResponse(Call<InsertSPResponse> call, Response<InsertSPResponse> response) {
+                InsertSPResponse insertSPResponse = response.body();
+                if(insertSPResponse.getSuccess() == 1){
 
-        // Đổ giá trị lên TextView
-        name.setText(nameValue);
-        sdt.setText(sdtValue);
-        email.setText(emailValue);
+                    nameKH = insertSPResponse.getName();
+                    sdtKH = insertSPResponse.getSdt();
+                    emailKH = insertSPResponse.getEmail();
+
+                    // Đổ giá trị lên TextView
+                    name.setText(nameKH);
+                    sdt.setText(sdtKH);
+                    email.setText(emailKH);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<InsertSPResponse> call, Throwable t) {
+                Toast.makeText(ProfileActivity.this, "Lỗi mẹ rồi", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 }

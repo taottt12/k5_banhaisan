@@ -114,8 +114,6 @@
             android:layout_height="200dp"
             android:layout_marginLeft="50dp"></ImageView>
     </LinearLayout>
-
-
     <Button
         android:id="@+id/btn_ADD"
         android:layout_width="match_parent"

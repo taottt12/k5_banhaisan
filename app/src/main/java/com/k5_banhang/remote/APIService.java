@@ -1,5 +1,6 @@
 package com.k5_banhang.remote;
 
+import com.k5_banhang.Model.AllDonHangResponse;
 import com.k5_banhang.Model.DangKyResponse;
 import com.k5_banhang.Model.DatHangResponse;
 import com.k5_banhang.Model.InsertSPResponse;
@@ -27,6 +28,27 @@ public interface APIService {
                               @Field("password") String password);
 
     @FormUrlEncoded
+    @POST("getAccount.php")
+    Call<InsertSPResponse> get_account(@Field("idUS") String idUS);
+
+    @FormUrlEncoded
+    @POST("updateHS.php")
+    Call<InsertSPResponse> updateHS(@Field("ten") String ten,
+                                    @Field("sdt") String sdt,
+                                    @Field("email") String email,
+                                    @Field("idUser")  String idUser);
+
+    @FormUrlEncoded
+    @POST("nhapSP.php")
+    Call<InsertSPResponse> nhap(@Field("MAMH") String MaMH,
+                              @Field("SOLUONG") String SL,
+                                @Field("MANCC") String MaNCC);
+
+    @FormUrlEncoded
+    @POST("delete.php")
+    Call<InsertSPResponse> delete(@Field("ma_mh") String ma_mh);
+
+    @FormUrlEncoded
     @POST("dangky.php")
     Call<DangKyResponse> dangky(@Field("username") String username,
                                  @Field("password") String password,
@@ -44,6 +66,15 @@ public interface APIService {
                                   @Field("mancc") String mancc,
                                     @Field("malh") String malh);
 
+    @FormUrlEncoded
+    @POST("updateSP.php")
+    Call<InsertSPResponse> UpdateSP(@Field("idMH") String idMH,
+                                    @Field("tensanpham") String tensanpham,
+                                    @Field("dongia") int dongia,
+                                    @Field("donvitinh") String donvitinh,
+                                    @Field("hinhanh") String hinhanh,
+                                    @Field("mancc") String mancc,
+                                    @Field("malh") String malh);
 
     @Multipart
     @POST("uploadimg.php")
@@ -57,6 +88,9 @@ public interface APIService {
 
     @GET("get_lh.php")
     Call<LoaihangResponse> getLH();
+
+    @GET("get_donhang.php")
+    Call<AllDonHangResponse> getDH();
 
     @FormUrlEncoded
     @POST("dathang.php")

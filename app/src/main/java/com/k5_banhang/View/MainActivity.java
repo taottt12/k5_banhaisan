@@ -106,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 Log.d("Lỗi", t.getMessage());
                 Toast.makeText(MainActivity.this, "Lỗi kết nối", Toast.LENGTH_LONG).show();
-
             }
         });
     }

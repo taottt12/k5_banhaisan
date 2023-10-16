@@ -33,12 +33,12 @@ public class GioHangActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gio_hang);
-        initView();
+        anhxa();
         initData();
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // Kết thúc Activity hiện tại
+                    finish(); // Kết thúc Activity hiện tại
             }
         });
         btnThanhToan.setOnClickListener(new View.OnClickListener(){
@@ -55,7 +55,7 @@ public class GioHangActivity extends AppCompatActivity {
         super.onResume();
         initData();
     }
-    private void initView() {
+    private void anhxa() {
         tvTongTien = findViewById(R.id.tv_tongtien);
         btnThanhToan = findViewById(R.id.btn_thanhtoan);
         llThongtin = findViewById(R.id.ll_thongtin);
@@ -79,10 +79,8 @@ public class GioHangActivity extends AppCompatActivity {
                     tvTongTien.setText(loadTongCong(HomeActivity.mangGioHang));
                 }
             });
-
             lvSPGioHang.setAdapter(adapter);
             tvTongTien.setText(loadTongCong(HomeActivity.mangGioHang));
-
         }
     }
 

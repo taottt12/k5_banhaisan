@@ -52,9 +52,6 @@ public class SanphamAdapter extends RecyclerView.Adapter<SanphamAdapter.ViewHold
         holder.txtdvt.setText(sanPham.getDonvitinh());
         System.out.println(sanPham.getHinhanh());
 
-//        int drawableResourceId = context.getResources().getIdentifier(sanPhamList.get(position).getHinhanh(), "drawable", context.getPackageName());
-//        Glide.with(context).load(drawableResourceId).into(holder.imgSanpham);
-
     }
 
     @Override

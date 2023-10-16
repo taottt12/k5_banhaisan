@@ -46,7 +46,6 @@ public class DatHangActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dathang);
-
         anhxa();
         initData();
         btnXacNhanTT.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +63,7 @@ public class DatHangActivity extends AppCompatActivity {
         txtEmailKH = findViewById(R.id.txt_emailKH);
         txtSdtKH = findViewById(R.id.txt_sdtKH);
         txtDiaChiKH = findViewById(R.id.txt_diachi);
+        apiService = Retrofift.getClient(Contans.API_URL).create(APIService.class);
     }
 
     private void initData() {
@@ -76,7 +76,6 @@ public class DatHangActivity extends AppCompatActivity {
         });
         lvSPDatHang.setAdapter(adapter);
         tv_tongtien.setText(loadTongCong(HomeActivity.mangGioHang));
-        apiService = Retrofift.getClient(Contans.API_URL).create(APIService.class);
     }
 
     private String loadTongCong(List<GioHang> list) {

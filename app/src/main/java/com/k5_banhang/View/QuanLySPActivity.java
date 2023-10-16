@@ -31,7 +31,7 @@ public class QuanLySPActivity extends AppCompatActivity {
 
     private APIService apiService;
     RecyclerView rc_loadMathang;
-    ImageView imgv_addSP;
+    ImageView imgv_addSP,imgv_nhapSP,imgv_profile;
     private List<SanPham> sanPhamList;
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -46,10 +46,27 @@ public class QuanLySPActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        imgv_nhapSP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(QuanLySPActivity.this, NhapSPActivity.class);
+                startActivity(intent);
+            }
+        });
+        imgv_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(QuanLySPActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
     private void anhxa(){
+        imgv_nhapSP = findViewById(R.id.imgv_nhapSP);
         rc_loadMathang = findViewById(R.id.rv_MatHangAdmin);
         imgv_addSP = findViewById(R.id.imgv_addSP);
+        imgv_profile = findViewById(R.id.imgv_profile);
         apiService = Retrofift.getClient(Contans.API_URL).create(APIService.class);
     }
     private void LoadSanPham() {

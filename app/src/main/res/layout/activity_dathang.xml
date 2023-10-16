@@ -85,11 +85,14 @@
                 android:layout_height="wrap_content"
                 ></EditText>
         </LinearLayout>
+
         <ListView
             android:id="@+id/lv_sp_dathang"
             android:layout_width="match_parent"
-            android:layout_height="400dp" />
+            android:layout_height="330dp" />
+
         <LinearLayout
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -112,12 +115,14 @@
                 android:textColor="#D80C0C"
                 android:textSize="30dp" />
         </LinearLayout>
+
         <Button
             android:id="@+id/btnXNTT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Xác nhận thanh toán"
             android:layout_gravity="center"></Button>
+
     </LinearLayout>
 </ScrollView>
 </LinearLayout>

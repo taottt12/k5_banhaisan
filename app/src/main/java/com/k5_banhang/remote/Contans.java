@@ -1,7 +1,7 @@
 package com.k5_banhang.remote;
 
 public class Contans {
-    public static final String API_URL = "http://172.21.1.132/aipbanhang_k5/";
+    public static final String API_URL = "http://172.21.3.58/aipbanhang_k5/";
     public static final int REQUEST_CODE_DATHANG = 101;
     public static final int RESULT_CODE_DATHANG = 102;
     public static final int REQUEST_CODE_GIOHANG = 123;

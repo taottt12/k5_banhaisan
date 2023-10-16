@@ -81,6 +81,16 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light"/>
 
+        <activity android:name="com.k5_banhang.View.NhapSPActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light"/>
+
+        <activity android:name="com.k5_banhang.View.QuanLyDonHangActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light"/>
+
         <activity
             android:name="com.k5_banhang.View.HomeActivity"
             android:exported="true"

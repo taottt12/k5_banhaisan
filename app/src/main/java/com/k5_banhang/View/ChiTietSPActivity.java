@@ -43,7 +43,7 @@ public class ChiTietSPActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chitietsanpham);
-        initView();
+        anhxa();
         catEventSpinner();
         getDataSP();
         btnExit.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +101,7 @@ public class ChiTietSPActivity extends AppCompatActivity {
         Toast.makeText(ChiTietSPActivity.this, "Thêm vào giỏ hàng thành công", Toast.LENGTH_SHORT).show();
         finish();
     }
-    private void initView() {
+    private void anhxa() {
         ivGioHang = findViewById(R.id.iv_giohang);
         ivSanpham = findViewById(R.id.imgCTSanPham);
         tvTenSP = findViewById(R.id.tv_tensp);
@@ -110,7 +110,6 @@ public class ChiTietSPActivity extends AppCompatActivity {
         spSL = findViewById(R.id.spinner);
         btnExit = findViewById(R.id.btnExit);
         btnThem = findViewById(R.id.btn_them);
-
     }
     private void catEventSpinner() {
         Integer[] soluong = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -130,11 +129,8 @@ public class ChiTietSPActivity extends AppCompatActivity {
         tvDVT.setText(donvt);
         tvTenSP.setText(tenChiTiet);
         Picasso.get().load(Contans.API_URL +"image/"+ sanPham.getHinhanh()).into(ivSanpham);
-
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         tvGiaSP.setText("Giá: " + decimalFormat.format(giachitiet) + "Đ");
-
-
     }
 
     public void finish(){

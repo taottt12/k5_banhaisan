@@ -45,7 +45,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         mangGioHang = new ArrayList<>();
         Anhxa();
-        initData();
         LoadSanPham();
         im_giohang.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,12 +67,8 @@ public class HomeActivity extends AppCompatActivity {
         rc_loadMathang = (RecyclerView) findViewById(R.id.rv_MatHang);
         sl_tronggio = (TextView) findViewById(R.id.sl_giohang);
         im_profile = (ImageView) findViewById(R.id.iv_profile);
-    }
-
-    private void initData() {
         apiService = Retrofift.getClient(Contans.API_URL).create(APIService.class);
     }
-
     private void LoadSanPham() {
         apiService.getAllsp().enqueue(new Callback<SanphamResponse>() {
             @Override
@@ -99,10 +94,8 @@ public class HomeActivity extends AppCompatActivity {
                     Log.e("LoadSanPham", "Response không thành công");
                 }
             }
-
             @Override
             public void onFailure(Call<SanphamResponse> call, Throwable t) {
-                Log.e("LoadSanPham", "Lỗi khi gọi API: " + t.getMessage());
                 Toast.makeText(HomeActivity.this, "Lỗi khi tải dữ liệu", Toast.LENGTH_SHORT).show();
             }
         });
